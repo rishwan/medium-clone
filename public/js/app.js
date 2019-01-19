@@ -1405,54 +1405,117 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "w-1/3 px-2" }, [
-          _c("div", { staticClass: "max-w-sm  overflow-hidden " }, [
+          _c("div", { staticClass: "flex items-center mb-5" }, [
             _c("img", {
-              staticClass: "w-full",
+              staticClass: "w-32 h-32  mr-4",
               attrs: {
-                src: "https://tailwindcss.com/img/card-top.jpg",
-                alt: "Sunset in the mountains"
+                src:
+                  "https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg",
+                alt: "Avatar of Jonathan Reinink"
               }
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "py-4" }, [
-              _c("div", { staticClass: "font-bold text-xl mb-2" }, [
-                _vm._v("The Coldest Sunset")
+            _c("div", { staticClass: "h-32" }, [
+              _c("div", { staticClass: "text-xl mb-6" }, [
+                _c(
+                  "h3",
+                  {
+                    staticClass:
+                      "text-black text-base leading-none leading-tight"
+                  },
+                  [
+                    _vm._v(
+                      "The Gillette Effect: What a Single Ad Reveals About American Men"
+                    )
+                  ]
+                )
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "text-grey-darker text-base" }, [
-                _vm._v(
-                  "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.\n                    "
-                )
+              _c("div", { staticClass: "text-sm mt-10" }, [
+                _c("p", { staticClass: "text-black leading-none" }, [
+                  _vm._v("Jonathan Reinink")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-grey-dark mt-1" }, [
+                  _vm._v("Aug 18")
+                ])
               ])
-            ]),
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex items-center mb-5" }, [
+            _c("img", {
+              staticClass: "w-32 h-32  mr-4",
+              attrs: {
+                src:
+                  "https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg",
+                alt: "Avatar of Jonathan Reinink"
+              }
+            }),
             _vm._v(" "),
-            _c("div", { staticClass: "py-4" }, [
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                },
-                [_vm._v("#photography")]
-              ),
+            _c("div", { staticClass: "h-32" }, [
+              _c("div", { staticClass: "text-xl mb-6" }, [
+                _c(
+                  "h3",
+                  {
+                    staticClass:
+                      "text-black text-base leading-none leading-tight"
+                  },
+                  [
+                    _vm._v(
+                      "The Gillette Effect: What a Single Ad Reveals About American Men"
+                    )
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                },
-                [_vm._v("#travel")]
-              ),
+              _c("div", { staticClass: "text-sm mt-10" }, [
+                _c("p", { staticClass: "text-black leading-none" }, [
+                  _vm._v("Jonathan Reinink")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-grey-dark mt-1" }, [
+                  _vm._v("Aug 18")
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex items-center" }, [
+            _c("img", {
+              staticClass: "w-32 h-32  mr-4",
+              attrs: {
+                src:
+                  "https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg",
+                alt: "Avatar of Jonathan Reinink"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "h-32" }, [
+              _c("div", { staticClass: "text-xl mb-6" }, [
+                _c(
+                  "h3",
+                  {
+                    staticClass:
+                      "text-black text-base leading-none leading-tight"
+                  },
+                  [
+                    _vm._v(
+                      "The Gillette Effect: What a Single Ad Reveals About American Men"
+                    )
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                },
-                [_vm._v("#winter")]
-              )
+              _c("div", { staticClass: "text-sm mt-10" }, [
+                _c("p", { staticClass: "text-black leading-none" }, [
+                  _vm._v("Jonathan Reinink")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-grey-dark mt-1" }, [
+                  _vm._v("Aug 18")
+                ])
+              ])
             ])
           ])
         ]),
