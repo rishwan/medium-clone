@@ -12,6 +12,7 @@
     <body>
         <div id="app">
             <main-menu></main-menu>
+            <hero-section></hero-section>
         </div>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>

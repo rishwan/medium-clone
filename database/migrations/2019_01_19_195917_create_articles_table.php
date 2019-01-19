@@ -16,9 +16,10 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->integer('topic_id')->nullable();
             $table->string('title')->nullable();
             $table->string('tag_line')->nullable();
-            $table->string('feature_img_path')->nullable();
+            $table->longText('feature_img_path')->nullable();
             $table->longText('body')->nullable();
             $table->boolean('published')->default(false);
             $table->boolean('featured')->default(false);
