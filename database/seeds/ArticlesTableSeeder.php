@@ -19,7 +19,7 @@ class ArticlesTableSeeder extends Seeder
 
         $this->command->info("> Articles table truncated. Seeding sample data");
 
-        $files = Storage::files('public\article_images');
+        $files = Storage::files('public/samples');
 
         $faker = Faker::create();
 
@@ -30,11 +30,21 @@ class ArticlesTableSeeder extends Seeder
         {
             $random_img_key = array_rand($files, 1);
 
+
+
+            //$img = Image::make(Storage::get($files[$random_img_key]))->fit(389, 237)->encode('jpg', 75);
+            $img = Image::make(Storage::get($files[$random_img_key]));
+
+            $image_name = uniqid('img_').'.jpg';
+            Storage::put("public/article_thumb_large/".$image_name, $img->fit(610, 372)->encode('jpg', 75));
+            Storage::put("public/article_thumb_medium/".$image_name, $img->fit(389, 237)->encode('jpg', 75));
+            Storage::put("public/article_thumb_small/".$image_name, $img->fit(128, 128)->encode('jpg', 75));
+
             Article::create([
                 'topic_id' => rand(1, 20),
                 'title' => $faker->words(rand(4, 8), true),
                 'tag_line' => $faker->words(rand(8, 12), true),
-                'feature_img_path' => $files[$random_img_key],
+                'feature_img_path' => $image_name,
                 'body' => json_encode($faker->paragraphs(5, false)),
                 'published' => true,
                 'featured' => true,

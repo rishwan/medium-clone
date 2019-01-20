@@ -17,5 +17,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/*
+ * Topic routes
+ */
 Route::get('/topics', 'TopicController@index');
-Route::get('/articles/hero-features', 'ArticleController@getHeroFeatures');
+
+/*
+ * Article routes
+ */
+Route::get('/articles/home-hero-features', 'ArticleController@getHeroFeatures');
+
+
+Route::get('/get_image/{directory}/{filename}','CommonController@getImage');

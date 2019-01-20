@@ -119,6 +119,193 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HeroSection.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HeroSection.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      articles: [],
+      first_article: null
+    };
+  },
+  created: function created() {
+    console.log('home-hero-section created');
+    this.fetchArticles();
+  },
+  methods: {
+    fetchArticles: function fetchArticles() {
+      var _this = this;
+
+      fetch('api/articles/home-hero-features').then(function (response) {
+        return response.json();
+      }).then(function (response) {
+        _this.articles = response.data;
+        _this.first_article = response.data[0];
+        console.log(_this.first_article.feature_img_medium_url);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MainMenu.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MainMenu.vue?vue&type=script&lang=js& ***!
@@ -1342,295 +1529,286 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass:
+          "lg:block container lg:mb-5 lg:mt-5 lg:mb-5 hidden border-b pb-5"
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "flex -mx-2" },
+          [
+            _vm._l(_vm.articles, function(article, index) {
+              return index === 0
+                ? _c("div", { staticClass: "w-1/3 px-2" }, [
+                    _c("div", { staticClass: "max-w-sm  overflow-hidden" }, [
+                      _c("img", {
+                        staticClass: "w-full",
+                        attrs: {
+                          src: article.feature_img_medium_url,
+                          alt: article.title
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "py-4" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "font-bold text-xl mb-2 article-title capitalize"
+                          },
+                          [_vm._v(_vm._s(article.title))]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "text-grey-darker text-base" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(
+                                article.body[0].replace(
+                                  /^(.{150}[^\s]*).*/,
+                                  "$1"
+                                ) + "\n"
+                              ) +
+                              "\n                        "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(0, true)
+                    ])
+                  ])
+                : _vm._e()
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "w-1/3 px-2" },
+              _vm._l(_vm.articles, function(article, index) {
+                return index !== 0 && index !== 4
+                  ? _c("div", { staticClass: "flex items-center mb-5" }, [
+                      _c("img", {
+                        staticClass: "w-32 h-32  mr-4",
+                        attrs: {
+                          src: article.feature_img_small_url,
+                          alt: article.title
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "h-32 flex-1 flex-col items-end" },
+                        [
+                          _c("div", { staticClass: "text-xl mb-6" }, [
+                            _c(
+                              "h3",
+                              {
+                                staticClass:
+                                  "text-black text-base leading-none leading-tight capitalize"
+                              },
+                              [_vm._v(_vm._s(article.title))]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(1, true)
+                        ]
+                      )
+                    ])
+                  : _vm._e()
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _vm._l(_vm.articles, function(article, index) {
+              return index === 4
+                ? _c("div", { staticClass: "w-1/3 px-2" }, [
+                    _c("div", { staticClass: "max-w-sm  overflow-hidden" }, [
+                      _c("img", {
+                        staticClass: "w-full",
+                        attrs: {
+                          src: article.feature_img_medium_url,
+                          alt: article.title
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "py-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "font-bold text-xl mb-2 capitalize" },
+                          [_vm._v(_vm._s(article.title))]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "text-grey-darker text-base" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(
+                                article.body[0].replace(
+                                  /^(.{150}[^\s]*).*/,
+                                  "$1"
+                                ) + "\n"
+                              ) +
+                              "\n                        "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(2, true)
+                    ])
+                  ])
+                : _vm._e()
+            })
+          ],
+          2
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _vm.first_article
+      ? _c(
+          "div",
+          { staticClass: "sm:container sm:mb-5 sm:mt-5 lg:hidden px-5" },
+          [
+            _c("div", { staticClass: "max-w  overflow-hidden" }, [
+              _c("img", {
+                staticClass: "w-full",
+                attrs: {
+                  src: _vm.first_article.feature_img_large_url,
+                  alt: _vm.first_article.title
+                }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "py-4" }, [
+                _c(
+                  "div",
+                  { staticClass: "font-bold text-xl mb-2 capitalize" },
+                  [_vm._v(_vm._s(_vm.first_article.title))]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-grey-darker text-base" }, [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.\n                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(3)
+            ])
+          ]
+        )
+      : _vm._e()
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "lg:block container lg:mb-5 lg:mt-5 hidden" }, [
-        _c("div", { staticClass: "flex -mx-2" }, [
-          _c("div", { staticClass: "w-1/3 px-2" }, [
-            _c("div", { staticClass: "max-w-sm  overflow-hidden" }, [
-              _c("img", {
-                staticClass: "w-full",
-                attrs: {
-                  src: "https://tailwindcss.com/img/card-top.jpg",
-                  alt: "Sunset in the mountains"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "py-4" }, [
-                _c("div", { staticClass: "font-bold text-xl mb-2" }, [
-                  _vm._v("The Coldest Sunset")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-grey-darker text-base" }, [
-                  _vm._v(
-                    "\n                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.\n                        "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "py-4" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#photography")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#travel")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                  },
-                  [_vm._v("#winter")]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/3 px-2" }, [
-            _c("div", { staticClass: "flex items-center mb-5" }, [
-              _c("img", {
-                staticClass: "w-32 h-32  mr-4",
-                attrs: {
-                  src:
-                    "https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg",
-                  alt: "Avatar of Jonathan Reinink"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "h-32" }, [
-                _c("div", { staticClass: "text-xl mb-6" }, [
-                  _c(
-                    "h3",
-                    {
-                      staticClass:
-                        "text-black text-base leading-none leading-tight"
-                    },
-                    [
-                      _vm._v(
-                        "The Gillette Effect: What a Single Ad Reveals About American Men"
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "text-sm mt-10" }, [
-                  _c("p", { staticClass: "text-black leading-none" }, [
-                    _vm._v("Jonathan Reinink")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-grey-dark mt-1" }, [
-                    _vm._v("Aug 18")
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center mb-5" }, [
-              _c("img", {
-                staticClass: "w-32 h-32  mr-4",
-                attrs: {
-                  src:
-                    "https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg",
-                  alt: "Avatar of Jonathan Reinink"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "h-32" }, [
-                _c("div", { staticClass: "text-xl mb-6" }, [
-                  _c(
-                    "h3",
-                    {
-                      staticClass:
-                        "text-black text-base leading-none leading-tight"
-                    },
-                    [
-                      _vm._v(
-                        "The Gillette Effect: What a Single Ad Reveals About American Men"
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "text-sm mt-10" }, [
-                  _c("p", { staticClass: "text-black leading-none" }, [
-                    _vm._v("Jonathan Reinink")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-grey-dark mt-1" }, [
-                    _vm._v("Aug 18")
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center" }, [
-              _c("img", {
-                staticClass: "w-32 h-32  mr-4",
-                attrs: {
-                  src:
-                    "https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg",
-                  alt: "Avatar of Jonathan Reinink"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "h-32" }, [
-                _c("div", { staticClass: "text-xl mb-6" }, [
-                  _c(
-                    "h3",
-                    {
-                      staticClass:
-                        "text-black text-base leading-none leading-tight"
-                    },
-                    [
-                      _vm._v(
-                        "The Gillette Effect: What a Single Ad Reveals About American Men"
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "text-sm mt-10" }, [
-                  _c("p", { staticClass: "text-black leading-none" }, [
-                    _vm._v("Jonathan Reinink")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-grey-dark mt-1" }, [
-                    _vm._v("Aug 18")
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/3 px-2" }, [
-            _c("div", { staticClass: "max-w-sm  overflow-hidden " }, [
-              _c("img", {
-                staticClass: "w-full",
-                attrs: {
-                  src: "https://tailwindcss.com/img/card-top.jpg",
-                  alt: "Sunset in the mountains"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "py-4" }, [
-                _c("div", { staticClass: "font-bold text-xl mb-2" }, [
-                  _vm._v("The Coldest Sunset")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-grey-darker text-base" }, [
-                  _vm._v(
-                    "\n                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.\n                        "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "py-4" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#photography")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#travel")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                  },
-                  [_vm._v("#winter")]
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
+    return _c("div", { staticClass: "py-4" }, [
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+        },
+        [_vm._v("#photography")]
+      ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "sm:container sm:mb-5 sm:mt-5 lg:hidden px-5" },
-        [
-          _c("div", { staticClass: "max-w  overflow-hidden" }, [
-            _c("img", {
-              staticClass: "w-full",
-              attrs: {
-                src: "https://tailwindcss.com/img/card-top.jpg",
-                alt: "Sunset in the mountains"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "py-4" }, [
-              _c("div", { staticClass: "font-bold text-xl mb-2" }, [
-                _vm._v("The Coldest Sunset")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-grey-darker text-base" }, [
-                _vm._v(
-                  "\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.\n                "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "py-4" }, [
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                },
-                [_vm._v("#photography")]
-              ),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                },
-                [_vm._v("#travel")]
-              ),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                },
-                [_vm._v("#winter")]
-              )
-            ])
-          ])
-        ]
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+        },
+        [_vm._v("#travel")]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+        },
+        [_vm._v("#winter")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-sm mt-10" }, [
+      _c("p", { staticClass: "text-black leading-none" }, [
+        _vm._v("Jonathan Reinink")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-grey-dark mt-1" }, [_vm._v("Aug 18")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "py-4" }, [
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+        },
+        [_vm._v("#photography")]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+        },
+        [_vm._v("#travel")]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+        },
+        [_vm._v("#winter")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "py-4" }, [
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+        },
+        [_vm._v("#photography")]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+        },
+        [_vm._v("#travel")]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+        },
+        [_vm._v("#winter")]
       )
     ])
   }
@@ -13077,15 +13255,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HeroSection_vue_vue_type_template_id_cb691220___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeroSection.vue?vue&type=template&id=cb691220& */ "./resources/js/components/HeroSection.vue?vue&type=template&id=cb691220&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _HeroSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeroSection.vue?vue&type=script&lang=js& */ "./resources/js/components/HeroSection.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _HeroSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _HeroSection_vue_vue_type_template_id_cb691220___WEBPACK_IMPORTED_MODULE_0__["render"],
   _HeroSection_vue_vue_type_template_id_cb691220___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -13099,6 +13279,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/HeroSection.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/HeroSection.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/HeroSection.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeroSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./HeroSection.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HeroSection.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeroSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -13124,15 +13318,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************************!*\
   !*** ./resources/js/components/MainMenu.vue ***!
   \**********************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MainMenu_vue_vue_type_template_id_da41f7ba_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainMenu.vue?vue&type=template&id=da41f7ba&scoped=true& */ "./resources/js/components/MainMenu.vue?vue&type=template&id=da41f7ba&scoped=true&");
 /* harmony import */ var _MainMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainMenu.vue?vue&type=script&lang=js& */ "./resources/js/components/MainMenu.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _MainMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _MainMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _MainMenu_vue_vue_type_style_index_0_id_da41f7ba_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MainMenu.vue?vue&type=style&index=0&id=da41f7ba&scoped=true&lang=css& */ "./resources/js/components/MainMenu.vue?vue&type=style&index=0&id=da41f7ba&scoped=true&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _MainMenu_vue_vue_type_style_index_0_id_da41f7ba_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MainMenu.vue?vue&type=style&index=0&id=da41f7ba&scoped=true&lang=css& */ "./resources/js/components/MainMenu.vue?vue&type=style&index=0&id=da41f7ba&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -13164,7 +13357,7 @@ component.options.__file = "resources/js/components/MainMenu.vue"
 /*!***********************************************************************!*\
   !*** ./resources/js/components/MainMenu.vue?vue&type=script&lang=js& ***!
   \***********************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
