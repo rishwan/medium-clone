@@ -16,6 +16,7 @@ class ArticleController extends Controller
 
         foreach($articles as $article)
         {
+            $article['url'] = 'article/'.$article->id;
             $article['feature_img_large_url'] = url('api/get_image/article_thumb_large/'.$article->feature_img_path);
             $article['feature_img_medium_url'] = url('api/get_image/article_thumb_medium/'.$article->feature_img_path);
             $article['feature_img_small_url'] = url('api/get_image/article_thumb_small/'.$article->feature_img_path);

@@ -24,6 +24,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('single-article', require('./components/SingleArticle.vue').default);
 Vue.component('main-menu', require('./components/MainMenu.vue').default);
 Vue.component('hero-section', require('./components/HeroSection').default);
+Vue.component('home-topic-features', require('./components/HomeTopicsFeatures').default);
+Vue.component('topic-header', require('./components/TopicHeader.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -31,5 +33,9 @@ Vue.component('hero-section', require('./components/HeroSection').default);
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        baseUrl: Laravel.baseUrl,
+        topic_title: Laravel.topic_title
+    }
 });

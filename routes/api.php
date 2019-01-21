@@ -26,6 +26,7 @@ Route::get('/topics', 'TopicController@index');
  * Article routes
  */
 Route::get('/articles/home-hero-features', 'ArticleController@getHeroFeatures');
+Route::get('/articles/featured-articles/all', 'TopicController@getFeaturedArticlesByTopic');
 
 
 Route::get('/get_image/{directory}/{filename}','CommonController@getImage');

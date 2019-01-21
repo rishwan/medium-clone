@@ -6,6 +6,13 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>MediumClone</title>
 
+        <script>
+            window.Laravel = {
+                "csrfToken": "foo",
+                "baseUrl": "{{ url('/') }}"
+            }
+        </script>
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     </head>
@@ -13,6 +20,7 @@
         <div id="app">
             <main-menu></main-menu>
             <hero-section></hero-section>
+            <home-topic-features></home-topic-features>
         </div>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>

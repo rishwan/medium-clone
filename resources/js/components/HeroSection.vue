@@ -77,13 +77,15 @@
                 -->
                 <div v-for="(article, index) in articles" class="w-1/3 px-2" v-if="index === 0">
                     <div class="max-w-sm  overflow-hidden">
-                        <img class="w-full" v-bind:src="article.feature_img_medium_url" :alt="article.title">
-                        <div class="py-4">
-                            <div class="font-bold text-xl mb-2 article-title capitalize">{{ article.title }}</div>
-                            <p class="text-grey-darker text-base">
-                                {{ article.body[0].replace(/^(.{150}[^\s]*).*/, "$1") + "\n" }}
-                            </p>
-                        </div>
+                        <a :href="article.url" class="no-underline text-black">
+                            <img class="w-full" v-bind:src="article.feature_img_medium_url" :alt="article.title">
+                            <div class="py-4">
+                                <div class="font-bold text-xl mb-2 article-title capitalize">{{ article.title }}</div>
+                                <p class="text-grey-darker text-base">
+                                    {{ article.body[0].replace(/^(.{150}[^\s]*).*/, "$1") + "\n" }}
+                                </p>
+                            </div>
+                        </a>
                         <div class="py-4">
                             <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
                             <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
@@ -97,7 +99,9 @@
                         <img v-bind:src="article.feature_img_small_url" :alt="article.title" class="w-32 h-32  mr-4">
                         <div class="h-32 flex-1 flex-col items-end">
                             <div class="text-xl mb-6">
-                                <h3 class="text-black text-base leading-none leading-tight capitalize">{{ article.title }}</h3>
+                                <a :href="article.url" class="no-underline text-black">
+                                    <h3 class="text-black text-base leading-none leading-tight capitalize">{{ article.title }}</h3>
+                                </a>
                             </div>
                             <div class="text-sm mt-10">
                                 <p class="text-black leading-none">Jonathan Reinink</p>
@@ -109,13 +113,15 @@
 
                 <div v-for="(article, index) in articles" class="w-1/3 px-2" v-if="index === 4">
                     <div class="max-w-sm  overflow-hidden">
-                        <img class="w-full" v-bind:src="article.feature_img_medium_url" :alt="article.title">
-                        <div class="py-4">
-                            <div class="font-bold text-xl mb-2 capitalize">{{ article.title }}</div>
-                            <p class="text-grey-darker text-base">
-                                {{ article.body[0].replace(/^(.{150}[^\s]*).*/, "$1") + "\n" }}
-                            </p>
-                        </div>
+                        <a :href="article.url" class="no-underline text-black">
+                            <img class="w-full" v-bind:src="article.feature_img_medium_url" :alt="article.title">
+                            <div class="py-4">
+                                <div class="font-bold text-xl mb-2 capitalize">{{ article.title }}</div>
+                                <p class="text-grey-darker text-base">
+                                    {{ article.body[0].replace(/^(.{150}[^\s]*).*/, "$1") + "\n" }}
+                                </p>
+                            </div>
+                        </a>
                         <div class="py-4">
                             <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
                             <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
@@ -129,13 +135,15 @@
         <!-- display on small screens -->
         <div class="sm:container sm:mb-5 sm:mt-5 lg:hidden px-5" v-if="first_article">
             <div class="max-w  overflow-hidden">
-                <img class="w-full" :src="first_article.feature_img_large_url" :alt="first_article.title">
-                <div class="py-4">
-                    <div class="font-bold text-xl mb-2 capitalize">{{ first_article.title }}</div>
-                    <p class="text-grey-darker text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                    </p>
-                </div>
+                <a :href="first_article.url" class="no-underline text-black">
+                    <img class="w-full" :src="first_article.feature_img_large_url" :alt="first_article.title">
+                    <div class="py-4">
+                        <div class="font-bold text-xl mb-2 capitalize">{{ first_article.title }}</div>
+                        <p class="text-grey-darker text-base">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                        </p>
+                    </div>
+                </a>
                 <div class="py-4">
                     <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
                     <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
@@ -165,8 +173,6 @@
                     .then(response => {
                         this.articles = response.data
                         this.first_article = response.data[0]
-                        console.log(this.first_article.feature_img_medium_url)
-
                     })
                     .catch(error => {
                         console.log(error)

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Topic;
-use App\Http\Resources\Topic as TopicResource;
+use App\Http\Resources\TopicResource;
+use App\Http\Resources\Topic as SingleTopic;
 
 class TopicController extends Controller
 {
@@ -16,6 +17,30 @@ class TopicController extends Controller
     public function index()
     {
         $topics = Topic::paginate(14);
+
+        return TopicResource::collection($topics);
+    }
+
+    public function getFeaturedArticlesByTopic()
+    {
+        $topics = Topic::take(3)->get();
+
+        foreach($topics as $topic)
+        {
+            $articles = $topic->articles->take(5);
+
+            foreach($articles as $article)
+            {
+                $article['url'] = 'article/'.$article->id;
+                $article['feature_img_large_url'] = url('api/get_image/article_thumb_large/'.$article->feature_img_path);
+                $article['feature_img_medium_url'] = url('api/get_image/article_thumb_medium/'.$article->feature_img_path);
+                $article['feature_img_small_url'] = url('api/get_image/article_thumb_small/'.$article->feature_img_path);
+                $article->body = json_decode($article->body);
+            }
+
+            $topic['featured_articles'] = $articles;
+
+        }
 
         return TopicResource::collection($topics);
     }
@@ -47,9 +72,9 @@ class TopicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($title)
     {
-        //
+        return view('topic', compact('title'));
     }
 
     /**
