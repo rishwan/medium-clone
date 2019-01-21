@@ -65,7 +65,15 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = Article::with('topic')->find($id);
+
+        $article->url = 'article/'.$article->id;
+        $article->feature_img_large_url = url('api/get_image/article_thumb_large/'.$article->feature_img_path);
+        $article->feature_img_medium_url = url('api/get_image/article_thumb_medium/'.$article->feature_img_path);
+        $article->feature_img_small_url = url('api/get_image/article_thumb_small/'.$article->feature_img_path);
+        //$article->body = json_decode($article->body);
+
+        return new ArticleResource($article);
     }
 
     /**

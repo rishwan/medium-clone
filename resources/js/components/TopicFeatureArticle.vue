@@ -2,7 +2,7 @@
     <div class="w-full px-2 mb-5">
         <div class="overflow-hidden " v-if="article">
             <h3 class="text-black text-base leading-none leading-tight my-5">FEATURED</h3>
-            <a :href="article.url" class="no-underline text-black">
+            <a :href="baseUrl + '/' +article.url" class="no-underline text-black">
                 <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
                 <div class="py-4">
                     <div class="font-bold text-xl mb-2 capitalize">{{ article.title }}</div>
@@ -26,7 +26,8 @@
         data () {
             return {
                 topic_title: null,
-                article: null
+                article: null,
+                baseUrl: this.$root.baseUrl
             }
         },
         created () {

@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/topic/{title}', 'TopicController@show');
+Route::get('/article/{id}', function () {
+    return view('article');
+});

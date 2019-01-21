@@ -29,6 +29,7 @@ Vue.component('topic-header', require('./components/TopicHeader.vue').default);
 Vue.component('topic-feature-article', require('./components/TopicFeatureArticle').default);
 Vue.component('topic-details', require('./components/TopicDetails').default);
 Vue.component('topic-articles', require('./components/TopicArticles').default);
+Vue.component('article-header', require('./components/ArticleHeader').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
