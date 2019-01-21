@@ -26,6 +26,10 @@ Vue.component('main-menu', require('./components/MainMenu.vue').default);
 Vue.component('hero-section', require('./components/HeroSection').default);
 Vue.component('home-topic-features', require('./components/HomeTopicsFeatures').default);
 Vue.component('topic-header', require('./components/TopicHeader.vue').default);
+Vue.component('topic-feature-article', require('./components/TopicFeatureArticle').default);
+Vue.component('topic-details', require('./components/TopicDetails').default);
+Vue.component('topic-articles', require('./components/TopicArticles').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

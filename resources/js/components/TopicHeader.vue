@@ -3,14 +3,29 @@
         <div class="container">
             <nav class="px-4 md:px-0 flex items-center justify-between mx-auto">
                 <ul class="list-reset flex items-center">
-                    <li class="mr-10 py-5">
+                    <li class="mr-5 py-5 pr-5 border-r font-bold">
                         Brand
                     </li>
-                    <li>
-                        {{ title }}
+                    <li class="capitalize font-medium text-grey">
+                        {{ topic_title }}
                     </li>
                 </ul>
             </nav>
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        data () {
+            return {
+                topic_title: null
+            }
+        },
+        created () {
+            console.log('topic header loaded')
+            this.topic_title = window.location.href.split('/').pop();
+            console.log(this.topic_title)
+        }
+    }
+</script>

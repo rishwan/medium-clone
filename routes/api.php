@@ -21,6 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  * Topic routes
  */
 Route::get('/topics', 'TopicController@index');
+Route::get('/topic/{title}/show', 'TopicController@getTopicDetails');
+Route::get('/topic/{title}/featured-article', 'TopicController@getFeaturedArticle');
+Route::get('/topic/{title}/articles/index', 'TopicController@getTopicArticles');
 
 /*
  * Article routes

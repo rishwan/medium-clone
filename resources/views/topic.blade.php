@@ -10,7 +10,6 @@
         window.Laravel = {
             "csrfToken": "foo",
             "baseUrl": "{{ url('/') }}",
-            "topic_title": "{{ $title }}"
         }
     </script>
 
@@ -21,6 +20,22 @@
 
 <div id="app">
     <topic-header></topic-header>
+
+    <div class="container mt-10">
+        <div class="">
+            <div class="flex -mx-2">
+                <div class="w-2/3 px-2">
+                    <topic-feature-article></topic-feature-article>
+                    <topic-articles></topic-articles>
+                </div>
+                <div class="w-1/3 px-2">
+                    <topic-details></topic-details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>

@@ -22,10 +22,12 @@ class TopicSeederClass extends Seeder
 
         for($i = 1; $i <= 20; $i++)
         {
+            $title = $faker->unique()->word;
+
             Topic::create([
-                'title' => $faker->unique()->word,
+                'title' => $title,
                 'tag_line' => $faker->words($nb = 3, $asText = true),
-                'url' => 'topic/'.$faker->word
+                'url' => 'topic/'.$title
             ]);
 
         }
