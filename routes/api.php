@@ -34,12 +34,3 @@ Route::get('/article/{id}', 'ArticleController@show');
 
 
 Route::get('/get_image/{directory}/{filename}','CommonController@getImage');
-
-
-Route::post('login', [
-    'as' => 'login',
-    'uses' => 'AuthController@login'
-]);
-Route::get('logout', 'AuthController@logout');
-Route::post('refresh', 'AuthController@refresh');
-Route::post('me', 'AuthController@me');

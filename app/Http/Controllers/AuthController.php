@@ -35,7 +35,7 @@ class AuthController extends Controller
         /*
          * Attempt authentication with the given username and password
          */
-        if(! $token = auth()->attempt(['email' => $username, 'password' => $password]))
+        if(! $token = auth('api')->attempt(['email' => $username, 'password' => $password]))
         {
             /*
              * If invalid, log the event
@@ -60,6 +60,8 @@ class AuthController extends Controller
 
         }
 
+        //dd(auth('api')->user());
+
         Log::info($request->ip() . ' - Successful login');
 
         $payload = [
@@ -69,7 +71,7 @@ class AuthController extends Controller
                 'access_token' => $token,
                 'token_type' => 'bearer',
                 'expires_in' => auth('api')->factory()->getTTL() * 60,
-                'user' => \Auth::user()
+                'user' => auth('api')->user()
             ]
         ];
 
@@ -121,10 +123,21 @@ class AuthController extends Controller
      */
     protected function respondWithToken($token)
     {
+
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
+    }
+
+    /**
+     * Get the guard to be used during authentication.
+     *
+     * @return \Illuminate\Contracts\Auth\Guard
+     */
+    public function guard()
+    {
+        return \Auth::guard('api');
     }
 }

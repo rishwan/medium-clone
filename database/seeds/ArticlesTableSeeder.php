@@ -45,7 +45,7 @@ class ArticlesTableSeeder extends Seeder
                     'title' => $faker->words(rand(4, 8), true),
                     'tag_line' => $faker->words(rand(8, 12), true),
                     'feature_img_path' => $image_name,
-                    'body' => json_encode($faker->paragraphs(5, false)),
+                    'body' => json_encode($faker->paragraphs(20, false)),
                     'published' => true,
                     'featured' => true,
                     'author' => 1
