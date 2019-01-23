@@ -48,7 +48,7 @@ class ArticlesTableSeeder extends Seeder
                     'body' => $this->generateBody(),
                     'published' => true,
                     'featured' => true,
-                    'author' => rand(1,10)
+                    'author' => rand(1, 6)
                 ]);
             }
         }
