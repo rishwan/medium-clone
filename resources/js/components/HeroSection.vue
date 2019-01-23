@@ -85,11 +85,11 @@
         },
         methods: {
             fetchArticles () {
-                fetch('api/articles/home-hero-features')
+                fetch(this.$root.baseUrl+'/api/articles/home-hero-features')
                     .then(response => response.json())
                     .then(response => {
-                        this.articles = response.data
-                        this.first_article = response.data[0]
+                        this.articles = response.data;
+                        this.first_article = response.data[0];
                     })
                     .catch(error => {
                         console.log(error)

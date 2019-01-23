@@ -310,7 +310,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchArticles: function fetchArticles() {
       var _this = this;
 
-      fetch('api/articles/home-hero-features').then(function (response) {
+      fetch(this.$root.baseUrl + '/api/articles/home-hero-features').then(function (response) {
         return response.json();
       }).then(function (response) {
         _this.articles = response.data;
