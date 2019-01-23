@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Model\Topic;
 use App\Model\Article;
 use App\Http\Resources\TopicResource;
-use App\Http\Resources\Topic as SingleTopic;
 use App\Http\Resources\Article as ArticlesResource;
 
 class TopicController extends Controller
