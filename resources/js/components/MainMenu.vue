@@ -4,7 +4,7 @@
             <nav class="px-4 md:px-0 flex items-center justify-between mx-auto">
                 <ul class="list-reset flex items-center">
                     <li v-for="link in links" v-bind:key="link.id" class="mr-10 py-5">
-                        <a v-bind:key="link.id" class="no-underline text-grey hover:text-green-darker font-serif capitalize" :href="link.url">{{ link.title }}</a>
+                        <a v-bind:key="link.id" class="no-underline text-grey hover:text-green-darker font-serif capitalize" :href="baseUrl + '/' +link.url">{{ link.title }}</a>
                     </li>
                 </ul>
             </nav>
@@ -16,7 +16,8 @@
     export default {
         data () {
             return {
-                links: []
+                links: [],
+                baseUrl: this.$root.baseUrl
             }
         },
         created () {

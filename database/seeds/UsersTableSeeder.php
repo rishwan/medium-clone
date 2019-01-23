@@ -30,13 +30,13 @@ class UsersTableSeeder extends Seeder
 
         $faker = Faker::create();
 
-        for($i = 1; $i <= 10; $i++)
+        for($i = 1; $i <= 5; $i++)
         {
             User::create([
                 'name' => $faker->name,
                 'email' => $faker->safeEmail,
                 'password' => bcrypt('welcome'),
-                'type' => 'user'
+                'type' => 'admin'
             ]);
         }
 

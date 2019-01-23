@@ -6,16 +6,13 @@
                 <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
                 <div class="py-4">
                     <div class="font-bold text-xl mb-2 capitalize">{{ article.title }}</div>
-                    <p class="text-grey-darker text-base">
-                        {{ article.body[0].replace(/^(.{150}[^\s]*).*/, "$1") + "\n" }}
-                    </p>
+                    <div class="text-grey-darker text-base" v-html='article.body.replace(/^(.{150}[^\s]*).*/, "$1") + "\n"'>
+                    </div>
                 </div>
             </a>
             <div class="py-4">
-                <p class="text-grey-darker text-sm font-medium mb-5">Author Name</p>
-                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+                <p class="text-grey-darker text-sm font-medium mb-5">{{article.author_details.name}}</p>
+                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2" v-for="tag in article.tags">#{{tag.name}}</span>
             </div>
         </div>
     </div>

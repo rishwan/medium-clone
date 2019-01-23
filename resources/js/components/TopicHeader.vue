@@ -4,7 +4,7 @@
             <nav class="px-4 md:px-0 flex items-center justify-between mx-auto">
                 <ul class="list-reset flex items-center">
                     <li class="mr-5 py-5 pr-5 border-r font-bold">
-                        Brand
+                        <a :href="baseUrl" class="text-black no-underline">Brand</a>
                     </li>
                     <li class="capitalize font-medium text-grey">
                         {{ topic_title }}
@@ -19,7 +19,8 @@
     export default {
         data () {
             return {
-                topic_title: null
+                topic_title: null,
+                baseUrl: this.$root.baseUrl
             }
         },
         created () {

@@ -19,7 +19,7 @@
 <body>
 
 <div id="app">
-    <article-header></article-header>
+    <single-article></single-article>
 
 </div>
 <!-- Scripts -->

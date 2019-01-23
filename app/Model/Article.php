@@ -10,4 +10,14 @@ class Article extends Model
     {
         return $this->belongsTo('App\Model\Topic', 'topic_id','id');
     }
+
+    public function tags()
+    {
+        return $this->morphToMany('App\Model\Tag', 'taggable');
+    }
+
+    public function authorDetails()
+    {
+        return $this->belongsTo('App\User', 'author','id');
+    }
 }

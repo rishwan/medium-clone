@@ -16,11 +16,13 @@ class ArticleController extends Controller
 
         foreach($articles as $article)
         {
+            $article['author'] = $article->authorDetails;
             $article['url'] = 'article/'.$article->id;
             $article['feature_img_large_url'] = url('api/get_image/article_thumb_large/'.$article->feature_img_path);
             $article['feature_img_medium_url'] = url('api/get_image/article_thumb_medium/'.$article->feature_img_path);
             $article['feature_img_small_url'] = url('api/get_image/article_thumb_small/'.$article->feature_img_path);
-            $article->body = json_decode($article->body);
+            $article->date = $article->created_at->format('d M');
+            $article->tags;
         }
 
         return ArticleResource::collection($articles);
@@ -65,13 +67,13 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::with('topic')->find($id);
+        $article = Article::with('topic','authorDetails','tags')->find($id);
 
         $article->url = 'article/'.$article->id;
         $article->feature_img_large_url = url('api/get_image/article_thumb_large/'.$article->feature_img_path);
         $article->feature_img_medium_url = url('api/get_image/article_thumb_medium/'.$article->feature_img_path);
         $article->feature_img_small_url = url('api/get_image/article_thumb_small/'.$article->feature_img_path);
-        //$article->body = json_decode($article->body);
+        $article->date = $article->created_at->format('d M');
 
         return new ArticleResource($article);
     }

@@ -18,7 +18,7 @@ class TopicController extends Controller
      */
     public function index()
     {
-        $topics = Topic::paginate(14);
+        $topics = Topic::paginate(11);
 
         return TopicResource::collection($topics);
     }
@@ -40,7 +40,7 @@ class TopicController extends Controller
                 $article['feature_img_large_url'] = url('api/get_image/article_thumb_large/'.$article->feature_img_path);
                 $article['feature_img_medium_url'] = url('api/get_image/article_thumb_medium/'.$article->feature_img_path);
                 $article['feature_img_small_url'] = url('api/get_image/article_thumb_small/'.$article->feature_img_path);
-                $article->body = json_decode($article->body);
+
             }
 
             $topic['featured_articles'] = $articles;
@@ -68,7 +68,8 @@ class TopicController extends Controller
         $article->feature_img_large_url = url('api/get_image/article_thumb_large/'.$article->feature_img_path);
         $article->feature_img_medium_url = url('api/get_image/article_thumb_medium/'.$article->feature_img_path);
         $article->feature_img_small_url = url('api/get_image/article_thumb_small/'.$article->feature_img_path);
-        $article->body = json_decode($article->body);
+        $article->tags;
+        $article->author_details = $article->authorDetails;
 
         return new ArticlesResource($article);
     }
@@ -95,13 +96,15 @@ class TopicController extends Controller
             ->orderBy('created_at','desc')
             ->get();
 
+
         foreach($articles as $article)
         {
             $article->url = 'article/'.$article->id;
             $article->feature_img_large_url = url('api/get_image/article_thumb_large/'.$article->feature_img_path);
             $article->feature_img_medium_url = url('api/get_image/article_thumb_medium/'.$article->feature_img_path);
             $article->feature_img_small_url = url('api/get_image/article_thumb_small/'.$article->feature_img_path);
-            $article->body = json_decode($article->body);
+            $article->tags;
+            $article->author_details = $article->authorDetails;
         }
 
         return ArticlesResource::collection($articles);

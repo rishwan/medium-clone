@@ -8,10 +8,10 @@
                     <a :href="baseUrl + '/' + article.url" class="no-underline text-black">
                         <h3 class="text-black text-base leading-none leading-tight capitalize mb-2">{{article.title}}</h3>
                     </a>
-                    <div class="text-grey-darker text-base w-2/3">
-                        {{ article.body[0].replace(/^(.{150}[^\s]*).*/, "$1") + "\n" }}
+                    <div class="text-grey-darker text-base w-2/3" v-html='article.body.replace(/^(.{150}[^\s]*).*/, "$1") + "\n" '>
+
                     </div>
-                    <p class="text-grey-darker text-sm font-medium mt-5 block">Author Name</p>
+                    <p class="text-grey-darker text-sm font-medium mt-5 block">{{ article.author_details.name }}</p>
                 </div>
                 <div class="w-1/5 pl-2">
                     <a :href="article.url" class="no-underline text-black">

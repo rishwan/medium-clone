@@ -45,14 +45,28 @@ class ArticlesTableSeeder extends Seeder
                     'title' => $faker->words(rand(4, 8), true),
                     'tag_line' => $faker->words(rand(8, 12), true),
                     'feature_img_path' => $image_name,
-                    'body' => json_encode($faker->paragraphs(20, false)),
+                    'body' => $this->generateBody(),
                     'published' => true,
                     'featured' => true,
-                    'author' => 1
+                    'author' => rand(1,10)
                 ]);
             }
         }
 
         $this->command->info('> Articles table seeded');
+    }
+
+    public function generateBody()
+    {
+        $faker = Faker::create();
+
+        $paragraphs = rand(5, 10);
+        $i = 0;
+        $ret = "";
+        while ($i < $paragraphs) {
+            $ret .= "<p>" . $faker->paragraph(rand(2, 6)) . "</p>";
+            $i++;
+        }
+        return $ret;
     }
 }
