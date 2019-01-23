@@ -26,7 +26,7 @@
         },
         methods: {
             fetchTopics () {
-                fetch('api/topics')
+                fetch(this.baseUrl+'/api/topics')
                     .then(response => response.json())
                     .then(response => {
                         this.links = response.data;

@@ -474,7 +474,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchTopics: function fetchTopics() {
       var _this = this;
 
-      fetch('api/topics').then(function (response) {
+      fetch(this.baseUrl + '/api/topics').then(function (response) {
         return response.json();
       }).then(function (response) {
         _this.links = response.data;
