@@ -17,7 +17,7 @@ class TopicController extends Controller
      */
     public function index()
     {
-        $topics = Topic::paginate(11);
+        $topics = Topic::paginate(7);
 
         return TopicResource::collection($topics);
     }
