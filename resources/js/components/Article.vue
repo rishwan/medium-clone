@@ -1,5 +1,5 @@
 <template>
-    <article v-if="article">
+    <article v-if="article" class="lg:px-0 px-2">
         <div class="border-b border-2-border-grey main-menu">
             <!-- Header -->
             <div class="container">

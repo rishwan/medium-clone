@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full px-2 border-b" v-if="topic">
+    <div class="w-full lg:px-2 border-b" v-if="topic">
         <div class="overflow-hidden " >
             <h3 class="text-black text-3xl leading-none leading-tight mt-5 mb-1 capitalize">{{ topic.title }}</h3>
 

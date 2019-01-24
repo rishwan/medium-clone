@@ -50,17 +50,17 @@
             <div class="flex-col items-center mb-5" v-for="( topic, index ) in topics">
                 <h3 class="uppercase border-b pb-5 my-5 block">{{ topic.title }}</h3>
                 <div class="flex items-center mb-5" v-for="( article, index ) in topic.featured_articles">
-                    <a :href="article.url" class="no-underline text-black">
-                        <img :src="article.feature_img_small_url" :alt="article.title" class="w-32 h-32  mr-4">
+                    <a :href="article.url" class="no-underline text-black w-1/3">
+                        <img :src="article.feature_img_small_url" :alt="article.title" class=" mr-4">
                     </a>
-                    <div class="h-32">
-                        <div class="text-xl mb-6">
+                    <div class="h-32 w-2/3 ml-2">
+                        <div class="text-xl mb-2">
                             <a :href="article.url" class="no-underline text-black">
-                                <h3 class="text-black text-base leading-none leading-tight capitalize">{{ article.title }}}</h3>
+                                <h3 class="text-black text-base leading-none leading-tight capitalize">{{ article.title }}</h3>
                             </a>
                         </div>
-                        <div class="text-sm mt-10">
-                            <p class="text-black leading-none">Jonathan Reinink</p>
+                        <div class="text-sm mt-2">
+                            <p class="text-black leading-none">{{article.author_details.name}}</p>
                             <p class="text-grey-dark mt-1">Aug 18</p>
                         </div>
                     </div>

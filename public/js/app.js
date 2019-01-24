@@ -1889,7 +1889,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.article
-    ? _c("article", [
+    ? _c("article", { staticClass: "lg:px-0 px-2" }, [
         _c("div", { staticClass: "border-b border-2-border-grey main-menu" }, [
           _c("div", { staticClass: "container" }, [
             _c(
@@ -2510,12 +2510,12 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    staticClass: "no-underline text-black",
+                    staticClass: "no-underline text-black w-1/3",
                     attrs: { href: article.url }
                   },
                   [
                     _c("img", {
-                      staticClass: "w-32 h-32  mr-4",
+                      staticClass: " mr-4",
                       attrs: {
                         src: article.feature_img_small_url,
                         alt: article.title
@@ -2524,8 +2524,8 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "h-32" }, [
-                  _c("div", { staticClass: "text-xl mb-6" }, [
+                _c("div", { staticClass: "h-32 w-2/3 ml-2" }, [
+                  _c("div", { staticClass: "text-xl mb-2" }, [
                     _c(
                       "a",
                       {
@@ -2539,13 +2539,21 @@ var render = function() {
                             staticClass:
                               "text-black text-base leading-none leading-tight capitalize"
                           },
-                          [_vm._v(_vm._s(article.title) + "}")]
+                          [_vm._v(_vm._s(article.title))]
                         )
                       ]
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(2, true)
+                  _c("div", { staticClass: "text-sm mt-2" }, [
+                    _c("p", { staticClass: "text-black leading-none" }, [
+                      _vm._v(_vm._s(article.author_details.name))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-grey-dark mt-1" }, [
+                      _vm._v("Aug 18")
+                    ])
+                  ])
                 ])
               ])
             })
@@ -2575,18 +2583,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-sm mt-2" }, [
-      _c("p", { staticClass: "text-black leading-none" }, [
-        _vm._v("Jonathan Reinink")
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "text-grey-dark mt-1" }, [_vm._v("Aug 18")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-sm mt-10" }, [
       _c("p", { staticClass: "text-black leading-none" }, [
         _vm._v("Jonathan Reinink")
       ]),
@@ -2672,6 +2668,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "lg:px-0 px-2" },
     [
       _c(
         "h3",
@@ -2686,7 +2683,7 @@ var render = function() {
         return _vm.articles
           ? _c("div", { staticClass: "px-2 my-6" }, [
               _c("div", { staticClass: "flex justify-between -mx-2" }, [
-                _c("div", { staticClass: "w-4/5 " }, [
+                _c("div", { staticClass: "lg:w-4/5 " }, [
                   _c(
                     "a",
                     {
@@ -2706,10 +2703,10 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("div", {
-                    staticClass: "text-grey-darker text-base w-2/3",
+                    staticClass: "text-grey-darker lg:text-base text-sm w-2/3",
                     domProps: {
                       innerHTML: _vm._s(
-                        article.body.replace(/^(.{150}[^\s]*).*/, "$1") + "\n"
+                        article.body.replace(/^(.{80}[^\s]*).*/, "$1") + "\n"
                       )
                     }
                   }),
@@ -2718,13 +2715,13 @@ var render = function() {
                     "p",
                     {
                       staticClass:
-                        "text-grey-darker text-sm font-medium mt-5 block"
+                        "text-grey-darker text-sm font-medium mt-2 block"
                     },
                     [_vm._v(_vm._s(article.author_details.name))]
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "w-1/5 pl-2" }, [
+                _c("div", { staticClass: "lg:w-1/5 pl-2" }, [
                   _c(
                     "a",
                     {
@@ -2733,7 +2730,7 @@ var render = function() {
                     },
                     [
                       _c("img", {
-                        staticClass: "w-32 h-32  ml-4",
+                        staticClass: "lg:w-32 lg:h-32  lg:ml-4",
                         attrs: {
                           src: article.feature_img_small_url,
                           alt: article.title
@@ -2773,7 +2770,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.topic
-    ? _c("div", { staticClass: "w-full px-2 border-b" }, [
+    ? _c("div", { staticClass: "w-full lg:px-2 border-b" }, [
         _c("div", { staticClass: "overflow-hidden " }, [
           _c(
             "h3",
