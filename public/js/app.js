@@ -459,6 +459,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -678,6 +683,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -2623,21 +2630,39 @@ var render = function() {
           _c(
             "ul",
             { staticClass: "list-reset flex items-center" },
-            _vm._l(_vm.links, function(link) {
-              return _c("li", { key: link.id, staticClass: "mr-10 py-5" }, [
+            [
+              _c("li", { staticClass: "mr-5 py-1 pr-5 border-r font-bold" }, [
                 _c(
                   "a",
                   {
-                    key: link.id,
-                    staticClass:
-                      "no-underline text-grey hover:text-green-darker font-serif capitalize",
-                    attrs: { href: _vm.baseUrl + "/" + link.url }
+                    staticClass: "text-black no-underline",
+                    attrs: { href: _vm.baseUrl }
                   },
-                  [_vm._v(_vm._s(link.title))]
+                  [
+                    _c("img", {
+                      staticClass: "h-10",
+                      attrs: { src: _vm.baseUrl + "/mindvalley.png" }
+                    })
+                  ]
                 )
-              ])
-            }),
-            0
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.links, function(link) {
+                return _c("li", { key: link.id, staticClass: "mr-10 py-5" }, [
+                  _c(
+                    "a",
+                    {
+                      key: link.id,
+                      staticClass:
+                        "no-underline text-grey hover:text-green-darker font-serif capitalize",
+                      attrs: { href: _vm.baseUrl + "/" + link.url }
+                    },
+                    [_vm._v(_vm._s(link.title))]
+                  )
+                ])
+              })
+            ],
+            2
           )
         ]
       )
@@ -2948,14 +2973,19 @@ var render = function() {
         },
         [
           _c("ul", { staticClass: "list-reset flex items-center" }, [
-            _c("li", { staticClass: "mr-5 py-5 pr-5 border-r font-bold" }, [
+            _c("li", { staticClass: "mr-5 py-1 pr-5 border-r font-bold" }, [
               _c(
                 "a",
                 {
                   staticClass: "text-black no-underline",
                   attrs: { href: _vm.baseUrl }
                 },
-                [_vm._v("Brand")]
+                [
+                  _c("img", {
+                    staticClass: "h-10",
+                    attrs: { src: _vm.baseUrl + "/mindvalley.png" }
+                  })
+                ]
               )
             ]),
             _vm._v(" "),

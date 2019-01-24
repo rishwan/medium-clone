@@ -3,8 +3,10 @@
         <div class="container">
             <nav class="px-4 md:px-0 flex items-center justify-between mx-auto">
                 <ul class="list-reset flex items-center">
-                    <li class="mr-5 py-5 pr-5 border-r font-bold">
-                        <a :href="baseUrl" class="text-black no-underline">Brand</a>
+                    <li class="mr-5 py-1 pr-5 border-r font-bold">
+                        <a :href="baseUrl" class="text-black no-underline">
+                            <img :src="baseUrl+'/mindvalley.png'" class="h-10"/>
+                        </a>
                     </li>
                     <li class="capitalize font-medium text-grey">
                         {{ topic_title }}
